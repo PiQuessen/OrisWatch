@@ -1,6 +1,8 @@
 name: Scrape News
 
 on:
+  push:
+    branches: [ "main", "master" ]
   schedule:
     - cron: '*/30 * * * *' # Runs every 30 minutes
   workflow_dispatch: # Allows manual trigger
@@ -34,4 +36,4 @@ jobs:
       with:
         commit_message: "🤖 AUTO-UPDATE: News Data [skip ci]"
         file_pattern: data/news.json
-        branch: main
+        # Removed 'branch' key to default to the currently checked-out branch (works for main or master)
