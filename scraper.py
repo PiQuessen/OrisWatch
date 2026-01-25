@@ -215,7 +215,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-        print(f"[!] Critical Error saving data: {e}")
-
-if __name__ == "__main__":
-    main()
