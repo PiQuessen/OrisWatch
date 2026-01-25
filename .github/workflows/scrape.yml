@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main", "master" ]
   schedule:
-    - cron: '*/30 * * * *' # Runs every 30 minutes
+    - cron: '*/5 * * * *' # Runs every 5 minutes
   workflow_dispatch: # Allows manual trigger
 
 permissions:
@@ -17,6 +17,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0 # Fetch history to ensure rebase works
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -31,9 +33,16 @@ jobs:
     - name: Run scraper
       run: python scraper.py
 
+    - name: Sync with Remote
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        # Pull latest changes from master (or main) and rebase our news updates on top
+        # --autostash automatically moves the local news.json aside and pops it back after pulling
+        git pull origin master --rebase --autostash || git pull origin main --rebase --autostash
+
     - name: Commit and push changes
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
         commit_message: "🤖 AUTO-UPDATE: News Data [skip ci]"
         file_pattern: data/news.json
-        # Removed 'branch' key to default to the currently checked-out branch (works for main or master)
