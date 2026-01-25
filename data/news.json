@@ -1,1 +1,302 @@
-[]
+[
+  {
+    "id": "https://www.dental-tribune.com/test/",
+    "title": "test",
+    "link": "https://www.dental-tribune.com/test/",
+    "summary": "No summary available.",
+    "source": "Dental Tribune",
+    "date": "Wed, 13 Jan 2021 10:25:23 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:08.865575"
+  },
+  {
+    "id": "https://www.dentistrytoday.com/the-aspen-group-earns-workplace-excellence-award/",
+    "title": "The Aspen Group Earns Workplace Excellence Award",
+    "link": "https://www.dentistrytoday.com/the-aspen-group-earns-workplace-excellence-award/",
+    "summary": "The Aspen Group (TAG), a leading healthcare support organization, recently announced it has been named to Built In\u2019s 2026 Best Large Places to Work in Chicago list. The recognition reflects TAG\u2019s ongoing commitment to building a workplace where people feel supported, empowered, and connected to a sh...",
+    "source": "Dentistry Today",
+    "date": "Fri, 23 Jan 2026 15:13:15 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:09.136262"
+  },
+  {
+    "id": "https://dentistry.co.uk/2026/01/24/essential-skills-for-treatment-coordinators-and-how-to-develop-them/",
+    "title": "Essential skills for treatment coordinators and how to develop them",
+    "link": "https://dentistry.co.uk/2026/01/24/essential-skills-for-treatment-coordinators-and-how-to-develop-them/",
+    "summary": "Imagen Medina highlights the main skills that treatment coordinators to put patients at ease and drive treatment uptake, plus how they can strengthen them. In modern dentistry, clinical excellence alone no longer secures patient confidence or commitment. Patients today are informed, selective, and d...",
+    "source": "Dentistry.co.uk",
+    "date": "Sat, 24 Jan 2026 10:55:58 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:10.132537"
+  },
+  {
+    "id": "https://www.nature.com/articles/s41415-026-9563-4",
+    "title": "BDA AGMs",
+    "link": "https://www.nature.com/articles/s41415-026-9563-4",
+    "summary": "British Dental Journal, Published online: 23 January 2026; doi:10.1038/s41415-026-9563-4 BDA AGMs",
+    "source": "British Dental Journal",
+    "date": "2026-01-23",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:11.041655"
+  },
+  {
+    "id": "https://www.groupdentistrynow.com/dso-group-blog/dental-bonding-agents/",
+    "title": "Understanding Bonding Agents for Success in Dentistry",
+    "link": "https://www.groupdentistrynow.com/dso-group-blog/dental-bonding-agents/",
+    "summary": "Clinician\u2019s Corner \u2013 Educational Content for Clinical Directors, Chief Dental Officers, Clinical Boards and the Entire Clinical Team. Spo nsored by Kerr The Nuances of Restorative Dentistry The realm of restorative dentistry is constantly evolving, driven by advancements in materials science and a d...",
+    "source": "Group Dentistry Now",
+    "date": "Fri, 23 Jan 2026 16:03:23 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:13.985896"
+  },
+  {
+    "id": "https://www.beckersdental.com/featured-perspectives/specialized-dental-partners-targets-growth-initiatives-amid-increased-patient-demand-qa/",
+    "title": "Specialized Dental Partners targets growth initiatives amid increased patient demand: Q&A",
+    "link": "https://www.beckersdental.com/featured-perspectives/specialized-dental-partners-targets-growth-initiatives-amid-increased-patient-demand-qa/",
+    "summary": "Irving, Texas-based Specialized Dental Partners plans to focus on strategic partnerships and supporting integrated care among its clinicians as it adapts to increased demand for specialty services. The DSO added more than 20 offices and 80 doctors to its network in 2025, bringing its network to more...",
+    "source": "Becker\u2019s Dental Review \u2013 DSO + Dental News",
+    "date": "Fri, 23 Jan 2026 23:47:41 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:14.802041"
+  },
+  {
+    "id": "https://www.aae.org/specialty/2026-cdt-coding-updates/",
+    "title": "2026 CDT Coding Updates",
+    "link": "https://www.aae.org/specialty/2026-cdt-coding-updates/",
+    "summary": "As the New Year begins, it also brings about important changes to our CDT coding terminology for reporting dental services on claims submitted to third-party payers. As endodontics continues to evolve\u2014clinically and technologically\u2014practitioners are encouraged to proactively review and incorporate t...",
+    "source": "American Association of Endodontists",
+    "date": "Wed, 14 Jan 2026 19:03:36 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:19.585719"
+  },
+  {
+    "id": "https://orthodonticproductsonline.com/treatment-products/accessories/infection-control/infection-control-in-the-digital-era-adopting-best-practices/",
+    "title": "Infection Control in the Digital Era: Adopting Best Practices",
+    "link": "https://orthodonticproductsonline.com/treatment-products/accessories/infection-control/infection-control-in-the-digital-era-adopting-best-practices/",
+    "summary": "As digital workflows become standard, experts emphasize the need for updated protocols and rigorous staff training to ensure patient and team safety. By Jane Kollmer Infection control is a foundational component of orthodontic practice, but the integration of digital technologies like 3D printing an...",
+    "source": "Orthodontic Products",
+    "date": "Fri, 23 Jan 2026 21:56:35 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:27.365030"
+  },
+  {
+    "id": "https://sleepreviewmag.com/sleep-health/sleep-whole-body/weight/lofta-accomplish-health-collaborate-medical-weight-loss-sleep-apnea-patients/",
+    "title": "Lofta, Accomplish Health to Collaborate on Medical Weight Loss for Sleep Apnea Patients",
+    "link": "https://sleepreviewmag.com/sleep-health/sleep-whole-body/weight/lofta-accomplish-health-collaborate-medical-weight-loss-sleep-apnea-patients/",
+    "summary": "The strategic alliance connects Lofta patients with virtual obesity care, including GLP-1 therapies and nutrition coaching, to address a key driver of disease severity. Key takeaways: Lofta and Accomplish Health formed an alliance to provide medical weight loss services to patients with sleep apnea....",
+    "source": "Sleep Review",
+    "date": "Fri, 23 Jan 2026 23:19:46 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:28.493136"
+  },
+  {
+    "id": "https://www.dentalproductsreport.com/view/bien-air-closer-look",
+    "title": "Bien Air Closer Look",
+    "link": "https://www.dentalproductsreport.com/view/bien-air-closer-look",
+    "summary": "No summary available.",
+    "source": "Dental Products Report articles",
+    "date": "Tue, 24 Dec 2024 18:35:20 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:31.007898"
+  },
+  {
+    "id": "https://in.dental-tribune.com/test/",
+    "title": "test",
+    "link": "https://in.dental-tribune.com/test/",
+    "summary": "No summary available.",
+    "source": "Dental Tribune",
+    "date": "Wed, 13 Jan 2021 10:25:23 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:31:49.074302"
+  },
+  {
+    "id": "https://www.expresshealthcare.in/ma/laxmi-dental-to-acquire-majority-stake-in-ai-dent/450078/",
+    "title": "Laxmi Dental to acquire majority stake in AI Dent",
+    "link": "https://www.expresshealthcare.in/ma/laxmi-dental-to-acquire-majority-stake-in-ai-dent/450078/",
+    "summary": "Laxmi Dental announced that its Board of Directors has approved an investment in IDBG AI Dent Global, a Gujarat-based healthcare technology company focused on artificial intelligence applications in dentistry. AI Dent is developing AI-based dental imaging and diagnostic tools, including software for...",
+    "source": "dental Archives - Express Healthcare",
+    "date": "Mon, 04 Aug 2025 11:18:19 +0000",
+    "category": "INDIA_TRANSMISSION",
+    "scraped_at": "2026-01-25T01:31:56.732697"
+  },
+  {
+    "id": "https://sabkadentist.com/100-faqs-about-clear-aligners-treatment-with-answers-sabka-dentist/",
+    "title": "100 FAQs About Clear Aligners Treatment (With Answers) \u2013 Sabka Dentist",
+    "link": "https://sabkadentist.com/100-faqs-about-clear-aligners-treatment-with-answers-sabka-dentist/",
+    "summary": "General FAQs About Clear Aligners What are clear aligners?Clear aligners are transparent, removable trays designed to gradually move your teeth into the desired position. How do clear aligners work?Aligners apply gentle, consistent pressure on teeth, shifting them step by step with each new tray set...",
+    "source": "Blog - Sabka Dentist \u2013 Top Dental Clinic Chain In India | Best Dentists Near Me",
+    "date": "Tue, 14 Oct 2025 06:13:38 +0000",
+    "category": "INDIA_TRANSMISSION",
+    "scraped_at": "2026-01-25T01:32:07.336822"
+  },
+  {
+    "id": "https://www.dnaindia.com/health/report-miracle-doctors-remove-199-kg-tumor-from-the-woman-s-stomach-suffering-from-colon-cancer-through-multi-organ-surgery-3198058",
+    "title": "Miracle! Doctors remove 19.9 kg tumor from the 43-year-old woman's stomach suffering from colon cancer through multi-organ surgery",
+    "link": "https://www.dnaindia.com/health/report-miracle-doctors-remove-199-kg-tumor-from-the-woman-s-stomach-suffering-from-colon-cancer-through-multi-organ-surgery-3198058",
+    "summary": "Doctors at the All India Medical Sciences (AIIMS) Delhi on Friday announced a successful surgery where they removed a whopping 19.9 kg tumour from a 43-year-old colon cancer patient, giving her a new lease of life.",
+    "source": "Health News",
+    "date": "Sat, 24 Jan 2026 06:18:00 GMT",
+    "category": "INDIA_TRANSMISSION",
+    "scraped_at": "2026-01-25T01:32:22.223450"
+  },
+  {
+    "id": "https://jada.ada.org/article/S0002-8177(25)00689-0/fulltext?rss=yes",
+    "title": "Improving access to oral health care for patients with opioid use disorder",
+    "link": "https://jada.ada.org/article/S0002-8177(25)00689-0/fulltext?rss=yes",
+    "summary": "People with opioid use disorder (OUD) often experience poor oral health yet rarely receive adequate oral health care. This gap highlights the need to understand the barriers to and facilitators of care involved. The authors used qualitative methods to investigate the challenges dentists face in prov...",
+    "source": "The Journal of the American Dental Association",
+    "date": "2026-01-22",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:32:25.065317"
+  },
+  {
+    "id": "https://www.jendodon.com/article/S0099-2399(26)00017-8/fulltext?rss=yes",
+    "title": "Fracture Resistance and Biomechanical Behavior of Retreated Teeth Obturated with Different Sealers: Combined Laboratory Testing and Finite Element Analysis",
+    "link": "https://www.jendodon.com/article/S0099-2399(26)00017-8/fulltext?rss=yes",
+    "summary": "This study evaluated the effect of different sealers on fracture resistance of retreated mandibular premolars and characterized their biomechanical behavior using three-dimensional finite element analysis (FEA).",
+    "source": "Journal of Endodontics",
+    "date": "2026-01-24",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:32:25.466518"
+  },
+  {
+    "id": "https://www.ajodo.org/article/S0889-5406(25)00540-2/fulltext?rss=yes",
+    "title": "Anterior palatal bone thickness: A retrospective cross-sectional cone-beam computed tomography pilot study in children and adolescents",
+    "link": "https://www.ajodo.org/article/S0889-5406(25)00540-2/fulltext?rss=yes",
+    "summary": "Previous studies assessed the palatal bone thickness in adult patients or cadavers to identify ideal insertion sites for orthodontic mini-implants. These findings might not be transferable to children and adolescent patients, whose jawbones are still growing. This retrospective cross-sectional pilot...",
+    "source": "American Journal of Orthodontics and Dentofacial Orthopedics",
+    "date": "2026-01-22",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:32:25.908300"
+  },
+  {
+    "id": "https://www.joms.org/article/S0278-2391(26)00060-1/fulltext?rss=yes",
+    "title": "Epidemiology of Facial Fractures Encountered in the Emergency Department Setting in the United States: An Update of Nationwide Estimates",
+    "link": "https://www.joms.org/article/S0278-2391(26)00060-1/fulltext?rss=yes",
+    "summary": "Facial fractures cause morbidity and involve intense resource use. Over the last two decades, several societal developments such as enactment of the Affordable Care Act and the COVID-19 pandemic occurred that could have potentially impacted facial fracture care.",
+    "source": "Journal of Oral and Maxillofacial Surgery",
+    "date": "2026-01-22",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:32:26.499481"
+  },
+  {
+    "id": "https://onlinelibrary.wiley.com/doi/10.1111/jcpe.70086?af=R",
+    "title": "Treatment of Residual Pockets in Stage III and IV Periodontitis Using an Oscillating Chitosan Device With or Without a Chitosan Gel\u2014A Randomised Parallel\u2010Arms Clinical Trial",
+    "link": "https://onlinelibrary.wiley.com/doi/10.1111/jcpe.70086?af=R",
+    "summary": "ABSTRACT Aim To compare non\u2010surgical subgingival re\u2010instrumentation with an oscillating chitosan brush (OCB), with and without a novel chitosan hydrogel (LGX), in residual or recurrent pockets in step 3 or 4 of stage III\u2013IV periodontitis patients. Materials and Methods Patients presenting with resid...",
+    "source": "Wiley: Journal of Clinical Periodontology: Table of Contents",
+    "date": "Thu, 22 Jan 2026 04:07:11 -0800",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:32:32.142891"
+  },
+  {
+    "id": "https://onlinelibrary.wiley.com/doi/10.1111/prd.70018?af=R",
+    "title": "Zirconia, titanium, and polyetheretherketone implant abutments show equal long\u2010term clinical success\u2014A systematic review and network meta\u2010analysis",
+    "link": "https://onlinelibrary.wiley.com/doi/10.1111/prd.70018?af=R",
+    "summary": "Abstract Hundreds of millions of people have one or more missing teeth. Consequently, a substantial number of patients undergo implant therapy each year. However, technical complications and soft tissue inflammation associated with the implant abutment or the type of restoration can lead to bone los...",
+    "source": "Wiley: Periodontology 2000: Table of Contents",
+    "date": "Mon, 01 Dec 2025 20:18:01 -0800",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:32:32.460008"
+  },
+  {
+    "id": "https://onlinelibrary.wiley.com/doi/10.1111/edt.70057?af=R",
+    "title": "Dental Splints in Dentoalveolar Trauma: An Overview of Public Healthcare Services in Brazil",
+    "link": "https://onlinelibrary.wiley.com/doi/10.1111/edt.70057?af=R",
+    "summary": "ABSTRACT Background/Aim The prognosis of traumatized teeth might be influenced by the type and quality of the dental splint. This prospective observational study was aimed to evaluate the indications and quality of dental splints performed in a comprehensive public oral health service in the city of...",
+    "source": "Wiley: Dental Traumatology: Table of Contents",
+    "date": "Wed, 21 Jan 2026 01:16:07 -0800",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:32:32.723401"
+  },
+  {
+    "id": "https://onlinelibrary.wiley.com/doi/10.1111/omi.70018?af=R",
+    "title": "Assessing Evidence to Include Filifactor alocis as a Novel Candidate in Socransky's Complexes",
+    "link": "https://onlinelibrary.wiley.com/doi/10.1111/omi.70018?af=R",
+    "summary": "ABSTRACT Socransky's complexes have identified a range of bacteria as key contributors to the onset and progression of periodontal disease. However, advancements in microbiological detection methods have allowed for exploration of the microbiome in periodontal health/disease in greater detail. In re...",
+    "source": "Wiley: Molecular Oral Microbiology: Table of Contents",
+    "date": "Thu, 15 Jan 2026 00:01:37 -0800",
+    "category": "INDIA_TRANSMISSION",
+    "scraped_at": "2026-01-25T01:32:32.987389"
+  },
+  {
+    "id": "https://onlinelibrary.wiley.com/doi/10.1111/eos.70070?af=R",
+    "title": "Reviewers 2025",
+    "link": "https://onlinelibrary.wiley.com/doi/10.1111/eos.70070?af=R",
+    "summary": "No summary available.",
+    "source": "Wiley: European Journal of Oral Sciences: Table of Contents",
+    "date": "Tue, 20 Jan 2026 20:38:55 -0800",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:32:33.202302"
+  },
+  {
+    "id": "https://onlinelibrary.wiley.com/doi/10.1111/ocr.70080?af=R",
+    "title": "Effect of Thickness and Trim Lines on the Magnitude and Distribution of Transverse Forces Exerted by Thermoformed Plastic Aligners During Maxillary Arch Expansion",
+    "link": "https://onlinelibrary.wiley.com/doi/10.1111/ocr.70080?af=R",
+    "summary": "ABSTRACT Objective The study evaluates the impact of thickness and trimming geometry on the magnitude and distribution of transverse forces applied by thermoformed plastic aligners during maxillary arch expansion. Methods A randomised experiment evaluated 60 aligners fabricated from PET\u2010G in two dis...",
+    "source": "Wiley: Orthodontics & Craniofacial Research: Table of Contents",
+    "date": "Mon, 19 Jan 2026 03:26:52 -0800",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:32:33.563346"
+  },
+  {
+    "id": "https://www.amrita.edu/scope-of-biomedical-engineering/",
+    "title": "Biomedical Engineering: Understanding the Course, Qualifications, and Career Scope",
+    "link": "https://www.amrita.edu/scope-of-biomedical-engineering/",
+    "summary": "Biomedical engineering is a dynamic and promising career path that bridges the gap between healthcare and technology. As the demand for innovative medical solutions continues to grow, this field offers endless opportunities for individuals with a strong foundation in engineering principles and a pas...",
+    "source": "Amrita Vishwa Vidyapeetham",
+    "date": "Fri, 14 Feb 2025 06:16:40 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:34:50.763680"
+  },
+  {
+    "id": "https://www.amrita.edu/blog/kochi-campus-festivals/",
+    "title": "Amrita Kochi Campus: Where Festivals Come Alive",
+    "link": "https://www.amrita.edu/blog/kochi-campus-festivals/",
+    "summary": "Amrita Vishwa Vidyapeetham\u2019s Kochi campus comprising of Amrita Institute of Medical Sciences Kochi, is not just a place for academic excellence; it\u2019s also a hub of vibrant cultural celebrations. As a student at Amrita Kochi Campus , you\u2019ll have the opportunity to immerse yourself in a rich tapestry ...",
+    "source": "Blog \u2013 Amrita Vishwa Vidyapeetham",
+    "date": "Fri, 09 Jan 2026 07:07:49 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:34:53.565054"
+  },
+  {
+    "id": "https://vspmdcrc.edu.in/elementor-30584/",
+    "title": "Elementor #30584",
+    "link": "https://vspmdcrc.edu.in/elementor-30584/",
+    "summary": "Testing Page Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Testing Purpose Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. ###Testing purpose ...",
+    "source": "RD Dental College",
+    "date": "Mon, 10 Jun 2024 09:26:43 +0000",
+    "category": "INDIA_TRANSMISSION",
+    "scraped_at": "2026-01-25T01:35:47.712170"
+  },
+  {
+    "id": "https://subharti.org/blog/physical-education-the-crucial-aspect-of-education-yet-often-overlooked/",
+    "title": "Physical Education: The Crucial Aspect of Education, Yet Often Overlooked",
+    "link": "https://subharti.org/blog/physical-education-the-crucial-aspect-of-education-yet-often-overlooked/",
+    "summary": "Education is visualized as a ladder to intellectual success, with emphasis placed on subjects like mathematics, science, and languages. These disciplines are seen as the \u201ccore\u201d of a student\u2019s future. However, this narrow focus often creates a significant blind spot\u2014the neglect of Physical Education....",
+    "source": "Subharti University Blog",
+    "date": "Fri, 16 Jan 2026 04:31:23 +0000",
+    "category": "GLOBAL_FEED",
+    "scraped_at": "2026-01-25T01:38:14.827979"
+  },
+  {
+    "id": "https://mygov.in/talk/tune-130th-episode-mann-ki-baat-prime-minister-narendra-modi-25th-january-2026/",
+    "title": "Tune in to 130th Episode of Mann Ki Baat by Prime Minister Narendra Modi on 25th January 2026",
+    "link": "https://mygov.in/talk/tune-130th-episode-mann-ki-baat-prime-minister-narendra-modi-25th-january-2026/",
+    "summary": "Tune in to 130th Episode of Mann Ki Baat by Prime Minister Narendra Modi on 25th January 2026 MyGov India1 1234567890 Saturday, January 24, 2026 - 12:30pm Tuesday, February 3, 2026 - 11:45pm New Delhi Mann Ki Baat Facebook Twitter Is feature: Yes Talk Time: Saturday, January 24, 2026 - 12:30pm Show ...",
+    "source": "MyGov.in",
+    "date": "Sat, 24 Jan 2026 07:18:46 +0000",
+    "category": "INDIA_TRANSMISSION",
+    "scraped_at": "2026-01-25T01:42:11.515359"
+  },
+  {
+    "id": "https://mygov.in/blog-entry/winner-announcement-e-poster-competition-occasion-idy-2025/",
+    "title": "Winner Announcement for E-poster Competition on the occasion of IDY 2025",
+    "link": "https://mygov.in/blog-entry/winner-announcement-e-poster-competition-occasion-idy-2025/",
+    "summary": "The Ministry of Ayush, in collaboration with MyGov, had invited citizens to participate in E-poster Competition on the occasion of IDY 2025. The contest was held on MyGov platform from 08.04.2025 to 30.05.2025. A total of 705 entries were received. https://blog.mygov.in/winner-announcement-for-e-pos...",
+    "source": "MyGov.in blogs",
+    "date": "Fri, 23 Jan 2026 12:01:10 +0000",
+    "category": "INDIA_TRANSMISSION",
+    "scraped_at": "2026-01-25T01:42:16.064100"
+  }
+]
