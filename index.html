@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrisWatch // GLOBAL CORTEX</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto+Mono:wght@400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'electric-cyan': '#00E5FF',
+                        'wired-black': '#050505',
+                        'wired-dark': '#0a0a0a',
+                        'wired-gray': '#f0f0f0',
+                    },
+                    fontFamily: {
+                        'display': ['"Archivo Black"', 'sans-serif'],
+                        'mono': ['"Roboto Mono"', 'monospace'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- React & Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #050505;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fff; border-left: 1px solid #eee; }
+        ::-webkit-scrollbar-thumb { background: #000; }
+        ::-webkit-scrollbar-thumb:hover { background: #00E5FF; }
+
+        /* Glitch Pattern */
+        .glitch-pattern {
+            background-image: repeating-linear-gradient(
+                45deg,
+                #000 0,
+                #000 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            background-size: 6px 6px;
+        }
+
+        .hover-glitch:hover .glitch-layer {
+            opacity: 1;
+            transform: translate(4px, -4px);
+        }
+
+        /* Utilities */
+        .text-cyan-hover:hover {
+            color: #00E5FF;
+            transition: color 0.1s ease-in-out;
+        }
+        
+        /* Selection */
+        ::selection {
+            background: #00E5FF;
+            color: #000;
+        }
+
+        /* Loading Shimmer */
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        .animate-shimmer {
+            animation: shimmer 2s infinite linear;
+            background: linear-gradient(to right, #f4f4f4 4%, #e0e0e0 25%, #f4f4f4 36%);
+            background-size: 1000px 100%;
+        }
+    </style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel" data-presets="env,react">
+        const { useState, useEffect, useMemo } = React;
+
+        // --- COMPONENTS ---
+
+        const SkeletonLoader = () => (
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 animate-pulse">
+                <div className="lg:col-span-1 border-r border-gray-200 pr-8 space-y-12">
+                    {[1, 2, 3].map(i => (
+                        <div key={i} className="flex gap-4">
+                            <div className="w-20 h-20 bg-gray-200 flex-shrink-0"></div>
+                            <div className="flex-1 space-y-3">
+                                <div className="h-2 bg-gray-200 w-1/3"></div>
+                                <div className="h-4 bg-gray-300 w-full"></div>
+                                <div className="h-4 bg-gray-300 w-3/4"></div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className="lg:col-span-2 space-y-8 px-4">
+                    <div className="h-4 bg-gray-200 w-32 mx-auto"></div>
+                    <div className="h-20 bg-gray-900 w-full"></div>
+                    <div className="h-20 bg-gray-900 w-2/3 mx-auto"></div>
+                    <div className="h-1 bg-black w-24 mx-auto my-8"></div>
+                    <div className="space-y-4">
+                        <div className="h-4 bg-gray-200 w-full"></div>
+                        <div className="h-4 bg-gray-200 w-full"></div>
+                        <div className="h-4 bg-gray-200 w-5/6"></div>
+                    </div>
+                </div>
+                <div className="lg:col-span-1 space-y-10 pl-8">
+                     {[1, 2, 3, 4].map(i => (
+                        <div key={i} className="space-y-3">
+                             <div className="h-2 bg-gray-200 w-1/4"></div>
+                             <div className="h-6 bg-gray-300 w-full"></div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        );
+
+        const GlitchThumb = ({ id }) => {
+            const seed = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+            const hue = (seed * 13) % 360;
+            const bgStyle = {
+                background: `linear-gradient(${seed % 45}deg, hsl(${hue}, 80%, 50%), #fff)`,
+            };
+            
+            return (
+                <div className="w-24 h-24 flex-shrink-0 bg-wired-black border-2 border-black relative overflow-hidden group-hover:border-electric-cyan transition-colors duration-200">
+                    <div className="absolute inset-0 opacity-80 mix-blend-multiply" style={bgStyle}></div>
+                    <div className="absolute inset-0 glitch-pattern opacity-40"></div>
+                    <div className="glitch-layer absolute inset-0 bg-electric-cyan opacity-0 mix-blend-hard-light transition-all duration-100 ease-out"></div>
+                </div>
+            );
+        };
+
+        const NavBar = ({ searchTerm, setSearchTerm }) => (
+            <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b-2 border-black">
+                <div className="container mx-auto px-6 h-20 flex items-center justify-between">
+                    <div className="flex items-center gap-12">
+                        <a href="#" className="font-display text-4xl tracking-tight bg-black text-white px-4 py-1 hover:bg-electric-cyan hover:text-black transition-colors">
+                            ORISWATCH
+                        </a>
+                        <nav className="hidden lg:flex gap-8 font-mono text-xs font-bold tracking-widest uppercase text-gray-500">
+                            {['Clinical', 'Industry', 'Academia', 'Tech'].map(link => (
+                                <a key={link} href="#" className="hover:text-black hover:underline decoration-2 underline-offset-4 decoration-electric-cyan transition-all">
+                                    {link}
+                                </a>
+                            ))}
+                        </nav>
+                    </div>
+
+                    <div className="flex items-center gap-6">
+                        <div className="relative hidden md:block group">
+                            <span className="absolute left-3 top-1/2 -translate-y-1/2 font-mono text-xs text-gray-400">/</span>
+                            <input 
+                                type="text" 
+                                placeholder="SEARCH_DATABASE" 
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)}
+                                className="bg-wired-gray border-b-2 border-transparent focus:border-black px-8 py-2 font-mono text-xs focus:outline-none focus:bg-white transition-all w-48 focus:w-64 placeholder-gray-500 font-bold"
+                            />
+                        </div>
+                        <a href="https://github.com" target="_blank" className="font-mono text-xs font-bold border-2 border-black px-6 py-2 hover:bg-black hover:text-white transition-all uppercase tracking-wider hidden sm:block">
+                            Subscribe
+                        </a>
+                    </div>
+                </div>
+            </header>
+        );
+
+        const SectionHeader = ({ title }) => (
+            <div className="mb-10 flex items-center gap-4">
+                <h2 className="font-display text-sm tracking-[0.2em] uppercase bg-black text-white px-3 py-1 inline-block">
+                    {title}
+                </h2>
+                <div className="h-1 bg-black flex-grow"></div>
+            </div>
+        );
+
+        // --- ARTICLE COMPONENTS ---
+
+        const HeroArticle = ({ item }) => {
+            if (!item) return null;
+            return (
+                <article className="flex flex-col h-full md:px-10 relative group">
+                    {/* Active State Indicator */}
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                    <div className="text-center mb-10 pt-4">
+                         <div className="flex justify-center items-center gap-3 mb-6">
+                            <span className="w-2 h-2 bg-electric-cyan rounded-full animate-pulse"></span>
+                            <span className="font-mono text-[10px] font-bold tracking-[0.3em] uppercase text-gray-500">
+                                BREAKING NEWS
+                            </span>
+                            <span className="w-2 h-2 bg-electric-cyan rounded-full animate-pulse"></span>
+                         </div>
+                        
+                        <a href={item.link} target="_blank" className="block group-hover:scale-[1.01] transition-transform duration-300">
+                            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.85] tracking-tighter mb-8 text-black text-cyan-hover selection:bg-black selection:text-white">
+                                {item.title}
+                            </h1>
+                        </a>
+                        
+                        <div className="w-24 h-2 bg-black mx-auto mb-10"></div>
+                        
+                        <p className="font-sans text-xl md:text-2xl font-medium leading-relaxed text-gray-800 line-clamp-4 max-w-3xl mx-auto selection:bg-electric-cyan">
+                            {item.summary}
+                        </p>
+
+                        <div className="mt-10 flex justify-center items-center gap-4">
+                            <span className="font-mono text-xs font-bold uppercase text-gray-500 border border-gray-300 px-2 py-1">
+                                {item.source}
+                            </span>
+                            <a href={item.link} target="_blank" className="font-mono text-xs font-bold uppercase bg-electric-cyan text-black border border-transparent hover:bg-black hover:text-white px-4 py-1 transition-all">
+                                READ FULL STORY
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            );
+        };
+
+        const FeedItem = ({ item }) => (
+            <article className="flex gap-6 mb-12 group cursor-pointer hover-glitch">
+                <GlitchThumb id={item.id} />
+                <div className="flex flex-col justify-start flex-1">
+                    <span className="font-mono text-[10px] font-bold uppercase text-gray-400 group-hover:text-electric-cyan transition-colors tracking-widest mb-1">
+                        {item.category === "INDIA_TRANSMISSION" ? "INDIA" : "GLOBAL"}
+                    </span>
+                    <a href={item.link} target="_blank" className="font-display text-xl leading-[1.1] block text-black group-hover:text-electric-cyan transition-colors line-clamp-3 mb-2">
+                        {item.title}
+                    </a>
+                    <div className="font-mono text-[10px] text-gray-500 mt-auto flex items-center gap-2 border-t border-gray-200 pt-2 w-full">
+                        <span className="font-bold text-black">{item.source}</span>
+                        <span>//</span>
+                        <span>{new Date(item.date).toLocaleDateString()}</span>
+                    </div>
+                </div>
+            </article>
+        );
+
+        const TrendingItem = ({ item, index }) => (
+            <article className="mb-8 pb-8 border-b border-gray-200 last:border-0 group relative pl-12">
+                <span className="absolute left-0 top-0 font-display text-4xl text-gray-200 group-hover:text-electric-cyan transition-colors leading-none z-0">
+                    {index + 1}
+                </span>
+                <div className="relative z-10">
+                    <a href={item.link} target="_blank" className="font-sans font-bold text-lg leading-tight block mb-2 text-black group-hover:text-electric-cyan transition-colors">
+                        {item.title}
+                    </a>
+                    <span className="font-mono text-[10px] uppercase text-gray-400 tracking-wide">
+                        SOURCE: {item.source}
+                    </span>
+                </div>
+            </article>
+        );
+
+        const SecondaryHero = ({ item }) => (
+             <div className="group cursor-pointer border-t-2 border-black pt-6 hover:bg-wired-gray transition-colors p-4">
+                <span className="font-mono text-[10px] font-bold text-electric-cyan uppercase mb-2 block tracking-wider">
+                    MUST READ
+                </span>
+                <h3 className="font-display text-3xl leading-none mb-3 group-hover:underline decoration-4 decoration-electric-cyan underline-offset-4">
+                    <a href={item.link} target="_blank">{item.title}</a>
+                </h3>
+                <p className="font-sans text-base text-gray-600 line-clamp-3 leading-relaxed">
+                    {item.summary}
+                </p>
+            </div>
+        );
+        
+        const EmptyState = () => (
+            <div className="flex flex-col items-center justify-center py-20 border-2 border-black bg-wired-gray m-4">
+                <div className="font-display text-6xl mb-4 text-wired-black opacity-20">NO SIGNAL</div>
+                <div className="font-mono text-sm text-center max-w-md">
+                    <p className="font-bold mb-4">DATABASE INITIALIZATION REQUIRED</p>
+                    <p className="mb-6">The OrisWatch Protocol is online but empty. Execute the Python Scraper to populate the Global Cortex.</p>
+                    <code className="bg-black text-electric-cyan p-2 block w-full text-center">python scraper.py</code>
+                </div>
+            </div>
+        );
+
+        // --- MAIN APP ---
+
+        const App = () => {
+            const [news, setNews] = useState([]);
+            const [loading, setLoading] = useState(true);
+            const [searchTerm, setSearchTerm] = useState("");
+            const [isOffline, setIsOffline] = useState(false);
+
+            useEffect(() => {
+                const fetchData = async () => {
+                    try {
+                        const response = await fetch('./data/news.json');
+                        if (!response.ok) throw new Error("Offline/Empty");
+                        const data = await response.json();
+                        if (Array.isArray(data) && data.length > 0) {
+                            // Sort by date desc
+                            data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                            setNews(data);
+                        } else {
+                            // File exists but is empty
+                            setNews([]);
+                        }
+                    } catch (err) {
+                        console.log("Fetch failed or no data.");
+                        setIsOffline(true);
+                        setNews([]);
+                    } finally {
+                        setTimeout(() => setLoading(false), 800);
+                    }
+                };
+                fetchData();
+            }, []);
+
+            // Filtering
+            const filteredNews = useMemo(() => {
+                if (!searchTerm) return news;
+                const lower = searchTerm.toLowerCase();
+                return news.filter(n => 
+                    (n.title && n.title.toLowerCase().includes(lower)) || 
+                    (n.source && n.source.toLowerCase().includes(lower))
+                );
+            }, [news, searchTerm]);
+
+            // Layout logic
+            const heroItem = filteredNews.length > 0 ? filteredNews[0] : null;
+            const remainingNews = filteredNews.slice(1);
+            
+            const indiaFeed = remainingNews.filter(n => n.category === "INDIA_TRANSMISSION").slice(0, 8);
+            const globalFeed = remainingNews.filter(n => n.category !== "INDIA_TRANSMISSION").slice(0, 10);
+            
+            // Safer column filling
+            const leftColumn = indiaFeed.length > 0 ? indiaFeed : remainingNews.slice(0, 6);
+            const rightColumn = globalFeed.length > 0 ? globalFeed : remainingNews.slice(6, 16);
+            const secondaryHeroItems = remainingNews.slice(16, 18);
+
+            return (
+                <div className="min-h-screen flex flex-col bg-white">
+                    <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                    
+                    {/* Status Bar */}
+                    <div className={`text-white font-mono text-[10px] py-3 px-6 flex justify-between items-center overflow-hidden border-b-2 border-black ${news.length === 0 ? 'bg-red-600' : 'bg-wired-black'}`}>
+                        <span className="tracking-[0.3em] font-bold">
+                            {news.length === 0 ? '⚠ NO DATA STREAM DETECTED' : 'THE DENTAL ISSUE // LIVE UPLINK ESTABLISHED'}
+                        </span>
+                        <div className="hidden md:flex gap-12 opacity-80 tracking-widest font-bold">
+                            <span>{new Date().toLocaleDateString()}</span>
+                            <span>NODES: {news.length}</span>
+                        </div>
+                    </div>
+
+                    <main className="container mx-auto px-6 py-16 flex-grow max-w-[1800px]">
+                        {loading ? (
+                            <SkeletonLoader />
+                        ) : news.length === 0 ? (
+                            <EmptyState />
+                        ) : (
+                            <div className="grid grid-cols-1 lg:grid-cols-4 gap-16">
+                                
+                                {/* LEFT COLUMN (Visual List) */}
+                                <section className="lg:col-span-1 border-r-2 border-gray-100 pr-0 lg:pr-10">
+                                    <SectionHeader title="INDIA TRANSMISSION" />
+                                    <div className="flex flex-col">
+                                        {leftColumn.map((item, idx) => (
+                                            <FeedItem key={idx} item={item} />
+                                        ))}
+                                    </div>
+                                    <button className="w-full mt-12 font-mono text-xs border-2 border-black py-4 hover:bg-black hover:text-white transition-colors uppercase font-bold tracking-widest">
+                                        Load More
+                                    </button>
+                                </section>
+
+                                {/* CENTER COLUMN (Hero) */}
+                                <section className="lg:col-span-2 px-0 lg:px-6">
+                                    <HeroArticle item={heroItem} />
+                                    
+                                    {/* Secondary Hero Items */}
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20">
+                                        {secondaryHeroItems.map((item, idx) => (
+                                            <SecondaryHero key={idx} item={item} />
+                                        ))}
+                                    </div>
+                                </section>
+
+                                {/* RIGHT COLUMN (Text List) */}
+                                <section className="lg:col-span-1 border-l-2 border-gray-100 pl-0 lg:pl-10">
+                                    <SectionHeader title="TRENDING GLOBALLY" />
+                                    <div>
+                                        {rightColumn.map((item, idx) => (
+                                            <TrendingItem key={idx} item={item} index={idx} />
+                                        ))}
+                                    </div>
+                                    <div className="mt-16 bg-wired-gray p-8 border-2 border-black text-center relative overflow-hidden">
+                                        <div className="absolute top-0 left-0 w-full h-1 bg-electric-cyan"></div>
+                                        <h4 className="font-display text-2xl mb-4">NEWSLETTER</h4>
+                                        <p className="font-sans text-sm text-gray-600 mb-6 leading-tight">Get the global cortex download daily.</p>
+                                        <input type="email" placeholder="EMAIL ADDRESS" className="w-full bg-white border-2 border-black p-3 font-mono text-xs mb-4 focus:outline-none focus:bg-electric-cyan focus:border-black transition-colors" />
+                                        <button className="w-full bg-black text-white font-mono text-xs py-3 hover:bg-white hover:text-black border-2 border-transparent hover:border-black transition-all font-bold tracking-widest">
+                                            SIGN UP
+                                        </button>
+                                    </div>
+                                </section>
+
+                            </div>
+                        )}
+                    </main>
+
+                    <footer className="bg-wired-black text-white py-20 mt-20 border-t-[6px] border-electric-cyan">
+                        <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-start gap-16">
+                            <div className="max-w-xl">
+                                <h1 className="font-display text-6xl mb-8 tracking-tighter text-white">ORISWATCH</h1>
+                                <p className="font-mono text-sm text-gray-400 leading-relaxed">
+                                    Automated dentistry news aggregator using Git Scraping architecture. 
+                                    <br/>
+                                    Constructed for high-density information retrieval.
+                                    <br/><br/>
+                                    &copy; {new Date().getFullYear()} GLOBAL CORTEX // OPEN SOURCE PROTOCOL
+                                </p>
+                            </div>
+                            <div className="font-mono text-xs flex gap-20 text-gray-400">
+                                <ul className="space-y-4">
+                                    <li className="font-bold text-electric-cyan mb-6 tracking-[0.2em] text-sm">SECTIONS</li>
+                                    <li><a href="#" className="hover:text-white transition-colors">Clinical</a></li>
+                                    <li><a href="#" className="hover:text-white transition-colors">Business</a></li>
+                                    <li><a href="#" className="hover:text-white transition-colors">Research</a></li>
+                                    <li><a href="#" className="hover:text-white transition-colors">Events</a></li>
+                                </ul>
+                                <ul className="space-y-4">
+                                    <li className="font-bold text-electric-cyan mb-6 tracking-[0.2em] text-sm">SYSTEM</li>
+                                    <li><a href="https://github.com" className="hover:text-white transition-colors">Source Code</a></li>
+                                    <li><a href="#" className="hover:text-white transition-colors">API Access</a></li>
+                                    <li><a href="#" className="hover:text-white transition-colors">RSS Feed</a></li>
+                                    <li><a href="#" className="hover:text-white transition-colors">Status</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

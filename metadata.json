@@ -1,0 +1,5 @@
+{
+  "name": "OrisWatch",
+  "description": "A brutalist, automated dentistry news aggregator using Git Scraping architecture.",
+  "requestFramePermissions": []
+}
