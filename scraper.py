@@ -135,6 +135,51 @@ def clean_summary(html_content):
     except Exception:
         return str(html_content)[:300]
 
+def extract_image(entry):
+    """Attempts to extract an image URL from an RSS entry."""
+    image_url = None
+    
+    # 1. media:content / media:thumbnail (Standard RSS extensions)
+    if 'media_content' in entry:
+        for media in entry.media_content:
+            if 'image' in media.get('type', '') or 'medium' in media: 
+                image_url = media.get('url')
+                if image_url: break
+    
+    if not image_url and 'media_thumbnail' in entry:
+        for media in entry.media_thumbnail:
+            image_url = media.get('url')
+            if image_url: break
+
+    # 2. Enclosures (Podcasts/Standard attachments)
+    if not image_url and 'links' in entry:
+        for link in entry.links:
+            if link.get('rel') == 'enclosure':
+                 href = link.get('href', '')
+                 # Basic check if it looks like an image
+                 if any(ext in href.lower() for ext in ['.jpg', '.jpeg', '.png', '.webp']):
+                     image_url = href
+                     break
+
+    # 3. Description/Content HTML parsing (Fall back to scraping the HTML)
+    if not image_url:
+        html_content = ''
+        if 'content' in entry:
+             html_content = entry.content[0].value
+        elif 'summary' in entry: 
+             html_content = entry.summary
+        
+        if html_content:
+            try:
+                soup = BeautifulSoup(html_content, 'html.parser')
+                img = soup.find('img')
+                if img and img.get('src'):
+                    image_url = img.get('src')
+            except:
+                pass
+                
+    return image_url
+
 def is_india_context(entry, url):
     """Heuristic to determine if news is Indian."""
     keywords = ["india", "delhi", "mumbai", "ida", "dci", "bengaluru", "chennai", ".in/"]
@@ -176,6 +221,7 @@ def scrape_feed(url):
             pub_date = entry.get('published', entry.get('updated', datetime.datetime.now().isoformat()))
             
             is_india = is_india_context(entry, link)
+            image_url = extract_image(entry)
             
             extracted_data.append({
                 "id": link,
@@ -184,6 +230,7 @@ def scrape_feed(url):
                 "summary": clean_summary(raw_summary),
                 "source": source_name,
                 "date": pub_date,
+                "image": image_url,
                 "category": "INDIA_TRANSMISSION" if is_india else "GLOBAL_FEED",
                 "scraped_at": datetime.datetime.now().isoformat()
             })
