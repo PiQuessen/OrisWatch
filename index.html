@@ -141,12 +141,29 @@
             </div>
         );
 
-        const GlitchThumb = ({ id }) => {
+        const GlitchThumb = ({ id, image }) => {
+            const [imgError, setImgError] = useState(false);
+            
+            // Generate seed based on ID for color fallback
             const seed = id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
             const hue = (seed * 13) % 360;
             const bgStyle = {
                 background: `linear-gradient(${seed % 45}deg, hsl(${hue}, 80%, 50%), #fff)`,
             };
+            
+            if (image && !imgError) {
+                return (
+                    <div className="w-24 h-24 flex-shrink-0 bg-wired-black border-2 border-black relative overflow-hidden group-hover:border-electric-cyan transition-colors duration-200">
+                        <img 
+                            src={image} 
+                            onError={() => setImgError(true)}
+                            alt=""
+                            className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-500"
+                        />
+                         <div className="absolute inset-0 glitch-pattern opacity-10 pointer-events-none mix-blend-overlay"></div>
+                    </div>
+                );
+            }
             
             return (
                 <div className="w-24 h-24 flex-shrink-0 bg-wired-black border-2 border-black relative overflow-hidden group-hover:border-electric-cyan transition-colors duration-200">
@@ -209,6 +226,19 @@
                 <article className="flex flex-col h-full md:px-10 relative group">
                     {/* Active State Indicator */}
                     <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-1 h-1 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    
+                    {/* Image Section */}
+                    {item.image && (
+                        <div className="w-full h-64 md:h-80 mb-8 border-2 border-black overflow-hidden relative shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-none transition-all">
+                             <img 
+                                src={item.image} 
+                                className="w-full h-full object-cover grayscale contrast-125 group-hover:grayscale-0 transition-all duration-700" 
+                                alt=""
+                                onError={(e) => {e.target.style.display='none'; e.target.parentElement.style.display='none'}}
+                             />
+                             <div className="absolute inset-0 glitch-pattern opacity-20 pointer-events-none mix-blend-overlay"></div>
+                        </div>
+                    )}
 
                     <div className="text-center mb-10 pt-4">
                          <div className="flex justify-center items-center gap-3 mb-6">
@@ -246,7 +276,7 @@
 
         const FeedItem = ({ item }) => (
             <article className="flex gap-6 mb-12 group cursor-pointer hover-glitch">
-                <GlitchThumb id={item.id} />
+                <GlitchThumb id={item.id} image={item.image} />
                 <div className="flex flex-col justify-start flex-1">
                     <span className="font-mono text-[10px] font-bold uppercase text-gray-400 group-hover:text-electric-cyan transition-colors tracking-widest mb-1">
                         {item.category === "INDIA_TRANSMISSION" ? "INDIA" : "GLOBAL"}
@@ -469,3 +499,4 @@
         root.render(<App />);
     </script>
 </body>
+</html>
